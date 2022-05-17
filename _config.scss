@@ -1,0 +1,60 @@
+// variables 
+
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semibold: 600;
+
+
+@mixin disableStandardButton{
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+
+@mixin standardHeader($maxWidth){
+    font-size: 2.8125rem;
+    line-height: 100%;
+    max-width: $maxWidth;
+}
+
+@mixin standardParagraph($maxWidth){
+    font-size: 1.125rem;
+    line-height: 175%;
+    max-width: $maxWidth;
+    font-weight: $light;
+}
+
+// General settings
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+p, a, button{
+    font-family: 'Barlow', sans-serif;
+    font-weight: $semibold;
+}
+h1, h2, h3, h4, h5{
+    font-family: 'DM Serif Display', serif;
+    font-weight: $regular;
+}
+
+button,
+button:focus {
+    @include disableStandardButton();
+}
+
+
+
+
+@function decimal-round ($number, $digits: 0, $mode: round) {
+    $n: 1;
+    @if $digits > 0 {
+        @for $i from 1 through $digits {
+            $n: $n * 10;
+        }
+    }
+    @return round($number * $n) / $n;
+}
