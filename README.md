@@ -7,3 +7,5 @@ It showcases Áslaug's records and her music video's and lists her upcoming show
 The website is desktop and mobile friendly. 
 
 Link: www.aslaugmusic.com
+
+Last update: november 2021
